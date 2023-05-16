@@ -1,7 +1,7 @@
 package body Game is
     function New_Bowling(Frame : Vector) return Bowling is
     begin
-        return (rolls => Frame);
+        return (rolls => Frame, score => 0);
     end New_Bowling;
 
     function Dummy(X, Y : Integer) return Integer is
@@ -9,11 +9,18 @@ package body Game is
         return X + Y;
     end Dummy;
 
-    function BA(Frame : in Vector) return Integer is
-    pragma Unreferenced(Frame);
+    function BA(Bowling_Game : in Bowling) return Integer is
+    B : Bowling := Bowling_Game;
     begin
-        return 0;
+        for Pin of B.rolls loop
+            Roll(B, Pin);
+        end loop;
+        return B.score;
     end BA;
- 
+
+    procedure Roll(Bowling_Game : in out Bowling; Pins : Integer) is
+    begin
+        Bowling_Game.score := Bowling_Game.score + Pins;
+    end Roll;
 
 end Game;

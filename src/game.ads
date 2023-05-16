@@ -11,10 +11,13 @@ package Game is
     function New_Bowling(Frame : Vector) return Bowling;
 
     function Dummy(X, Y: Integer) return Integer;
-    function BA(Frame : in Vector) return Integer;
+    function BA(Bowling_Game : in Bowling) return Integer;
 
 private
     type Bowling is record
         rolls : Vector;
+        score : Integer := 0;
     end record;
+
+    procedure Roll(Bowling_Game : in out Bowling; Pins : Integer);
 end Game;
