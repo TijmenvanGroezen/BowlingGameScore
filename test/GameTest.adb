@@ -44,4 +44,13 @@ package body GameTest is
         Assert (Game.BA(T.G) = 8, "Double Throw");
     end Test_Double_Throw;
 
+    procedure Test_Double_Throw_Spare(T : in out Test) is
+    Double_Throw : Game.Integer_Vectors.Vector;
+    begin
+        Double_Throw.Append(3);
+        Double_Throw.Append(7);
+        T.G := Game.New_Bowling(Double_Throw);
+        Assert (Game.BA(T.G) = 10, "Double Throw Spare");
+    end Test_Double_Throw_Spare;
+
 end GameTest;
