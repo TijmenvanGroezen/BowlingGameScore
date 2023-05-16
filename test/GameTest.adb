@@ -27,4 +27,21 @@ package body GameTest is
         Assert (Game.BA(T.G) = 3, "Single Throw");
     end Test_Single_Throw_Game;
 
+    procedure Test_Single_Throw_Strike(T : in out Test) is
+    Single_Throw_Strike : Game.Integer_Vectors.Vector;
+    begin
+        Single_Throw_Strike.Append(10);
+        T.G := Game.New_Bowling(Single_Throw_Strike);
+        Assert (Game.BA(T.G) = 10, "Single Throw Strike");
+    end Test_Single_Throw_Strike;
+
+    procedure Test_Double_Throw(T : in out Test) is
+    Double_Throw : Game.Integer_Vectors.Vector;
+    begin
+        Double_Throw.Append(3);
+        Double_Throw.Append(5);
+        T.G := Game.New_Bowling(Double_Throw);
+        Assert (Game.BA(T.G) = 8, "Double Throw");
+    end Test_Double_Throw;
+
 end GameTest;
