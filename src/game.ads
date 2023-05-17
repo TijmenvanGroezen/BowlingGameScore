@@ -1,3 +1,4 @@
+with Ada.Containers; use Ada.Containers;
 with Ada.Containers.Vectors;
 
 package Game is

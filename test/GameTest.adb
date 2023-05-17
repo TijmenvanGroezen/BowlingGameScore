@@ -91,4 +91,24 @@ package body GameTest is
         Assert (Game.BA(T.G) = 18, "Spare Plus Normal Throw");
     end Test_Spare_Plus_Throw;
 
+    procedure Test_Three_Strikes(T : in out Test) is
+    Three_Strikes : Game.Integer_Vectors.Vector;
+    begin
+        Three_Strikes.Append(10);
+        Three_Strikes.Append(10);
+        Three_Strikes.Append(10);
+        T.G := Game.New_Bowling(Three_Strikes);
+        Assert (Game.BA(T.G) = 50, "Throw Three Strikes");
+    end Test_Three_Strikes;
+
+    procedure Test_Strikes_Plus_Normal_Throw(T : in out Test) is
+    Strike_Plus_Throw : Game.Integer_Vectors.Vector;
+    begin
+        Strike_Plus_Throw.Append(10);
+        Strike_Plus_Throw.Append(4);
+        Strike_Plus_Throw.Append(1);
+        T.G := Game.New_Bowling(Strike_Plus_Throw);
+        Assert (Game.BA(T.G) = 20, "Strike Plus Normal Throw");
+    end Test_Strikes_Plus_Normal_Throw;
+
 end GameTest;
