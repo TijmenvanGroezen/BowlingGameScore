@@ -53,4 +53,22 @@ package body GameTest is
         Assert (Game.BA(T.G) = 10, "Double Throw Spare");
     end Test_Double_Throw_Spare;
 
+    procedure Test_Throw_After_Strike(T : in out Test) is
+    Throw_After_Strike : Game.Integer_Vectors.Vector;
+    begin
+        Throw_After_Strike.Append(10);
+        Throw_After_Strike.Append(7);
+        T.G := Game.New_Bowling(Throw_After_Strike);
+        Assert (Game.BA(T.G) = 24, "Throw After Strike");
+    end Test_Throw_After_Strike;
+
+    procedure Test_Throw_Strike_After_Strike(T: in out Test) is
+    Throw_Strike_After_Strike : Game.Integer_Vectors.Vector;
+    begin
+        Throw_Strike_After_Strike.Append(10);
+        Throw_Strike_After_Strike.Append(10);
+        T.G := Game.New_Bowling(Throw_Strike_After_Strike);
+        Assert (Game.BA(T.G) = 30, "Throw Strike After Strike");
+    end Test_Throw_Strike_After_Strike;
+
 end GameTest;

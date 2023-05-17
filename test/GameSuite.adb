@@ -20,6 +20,10 @@ package body GameSuite is
         (Caller.Create ("Test Double Throw", Test_Double_Throw'Access));
     Ret.Add_Test
         (Caller.Create ("Test Double Throw Spare", Test_Double_Throw_Spare'Access));
+    Ret.Add_Test
+        (Caller.Create ("Test Throw After Strike", Test_Throw_After_Strike'Access));
+    Ret.Add_Test
+        (Caller.Create ("Test Throw Strike After Strike", Test_Throw_Strike_After_Strike'Access));
     return Ret;
    end Suite;
 

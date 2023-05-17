@@ -17,5 +17,6 @@ package GameTest is
     procedure Test_Single_Throw_Strike(T : in out Test);
     procedure Test_Double_Throw(T : in out Test);
     procedure Test_Double_Throw_Spare(T : in out Test);
-
+    procedure Test_Throw_After_Strike(T : in out Test);
+    procedure Test_Throw_Strike_After_Strike(T: in out Test);
 end GameTest;
