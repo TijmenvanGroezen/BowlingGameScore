@@ -7,12 +7,6 @@ package body GameTest is
         T.G := Game.New_Bowling(Empty_Frame);
     end Set_Up;
 
-    procedure Test_Dummy (T: in out Test) is
-    begin
-        Assert (Game.Dummy(2,2) = 4, "Test Dummy function");
-        
-    end Test_Dummy;
-
     procedure Test_No_Throw_Game (T: in out Test) is
     begin
         Assert (Game.BA(T.G) = 0, "No throws");
@@ -20,7 +14,6 @@ package body GameTest is
 
     procedure Test_Single_Throw_Game(T: in out Test) is
     Single_Throw : Vector;
-
     begin
         Single_Throw.Append(3);
         T.G := Game.New_Bowling(Single_Throw);
@@ -90,5 +83,12 @@ package body GameTest is
         T.G := Game.New_Bowling(Strike_Plus_Throw);
         Assert (Game.BA(T.G) = 20, "Strike Plus Normal Throw");
     end Test_Strikes_Plus_Normal_Throw;
+
+    procedure Test_Random_Game(T : in out Test) is
+    Random_Game : constant Vector := 1 & 4 & 4 & 5 & 6 & 4 & 5 & 5 & 10 & 0 & 1 & 7 & 3 & 6 & 4 & 10 & 2 & 8 & 6 & 0;
+    begin
+        T.G := Game.New_Bowling(Random_Game);
+        Assert (Game.BA(T.G) = 133, "Random Bowling Game");
+    end Test_Random_Game;
 
 end GameTest;

@@ -8,9 +8,6 @@ procedure Main is
 begin
     Put_Line("Start Bowling Game");
 
-    X := Game.Dummy(2,2);
-    Put_Line(Integer'Image(X));
-
     X := Game.BA(G);
     Put_Line(Integer'Image(X));
     

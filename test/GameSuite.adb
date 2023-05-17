@@ -9,8 +9,6 @@ package body GameSuite is
     Ret : constant Access_Test_Suite := new Test_Suite;
    begin
     Ret.Add_Test
-        (Caller.Create ("Test Dummy", Test_Dummy'Access));
-    Ret.Add_Test
         (Caller.Create ("Test No Throws", Test_No_Throw_Game'Access));
     Ret.Add_Test
         (Caller.Create ("Test Single Throw", Test_Single_Throw_Game'Access));
@@ -32,6 +30,8 @@ package body GameSuite is
         (Caller.Create ("Test Throw Three Strikes", Test_Three_Strikes'Access));
     Ret.Add_Test
         (Caller.Create ("Test Strike Plus Normal Throw", Test_Strikes_Plus_Normal_Throw'Access));
+    Ret.Add_Test
+        (Caller.Create ("Test Random Bowling Game", Test_Random_Game'Access));
     return Ret;
    end Suite;
 
