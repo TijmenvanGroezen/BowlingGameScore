@@ -27,6 +27,12 @@ package body Game is
                     B.score := B.score + B.rolls(Frame_Index + 2);
                 end if;
                 Frame_Index := Frame_Index + 1;
+            elsif Count_Type(Frame_Index + 1) <= B.rolls.Length and then B.rolls(Frame_Index) + B.rolls(Frame_Index + 1) = 10 then
+                B.score := B.score + 10;
+                if Count_Type(Frame_Index + 2) <= B.rolls.Length then
+                    B.score := B.score + B.rolls(Frame_Index + 2);
+                end if;
+                Frame_Index := Frame_Index + 2;
             else
                 B.score := B.score + B.rolls(Frame_Index);
                 if Count_Type(Frame_Index + 1) <= B.rolls.Length then
