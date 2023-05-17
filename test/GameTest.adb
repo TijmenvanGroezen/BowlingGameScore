@@ -71,4 +71,14 @@ package body GameTest is
         Assert (Game.BA(T.G) = 30, "Throw Strike After Strike");
     end Test_Throw_Strike_After_Strike;
 
+    procedure Test_Normal_Three_Throw_Game(T : in out Test) is
+    Three_Throws : Game.Integer_Vectors.Vector;
+    begin
+        Three_Throws.Append(3);
+        Three_Throws.Append(5);
+        Three_Throws.Append(4);
+        T.G := Game.New_Bowling(Three_Throws);
+        Assert (Game.BA(T.G) = 12, "Normal Three Throw Game");
+    end Test_Normal_Three_Throw_Game;
+
 end GameTest;

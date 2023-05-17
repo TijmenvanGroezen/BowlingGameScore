@@ -24,6 +24,8 @@ package body GameSuite is
         (Caller.Create ("Test Throw After Strike", Test_Throw_After_Strike'Access));
     Ret.Add_Test
         (Caller.Create ("Test Throw Strike After Strike", Test_Throw_Strike_After_Strike'Access));
+    Ret.Add_Test
+        (Caller.Create ("Test Normal Three Throw Game", Test_Normal_Three_Throw_Game'Access));
     return Ret;
    end Suite;
 
