@@ -1,6 +1,6 @@
 with AUnit;
 with AUnit.Test_Fixtures;
-with Game;
+with Game; use Game.Integer_Vectors;
 
 package GameTest is
     --  use Game.Integer_Vectors;
